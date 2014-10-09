@@ -15,10 +15,10 @@ URL: http://themble.com/bones/
 */
 
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'bones_flush_rewrite_rules' );
+add_action( 'after_switch_theme', 'wpbp_flush_rewrite_rules' );
 
 // Flush your rewrite rules
-function bones_flush_rewrite_rules() {
+function wpbp_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
@@ -28,21 +28,21 @@ function custom_post_example() {
 	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
-			'name' => __( 'Custom Types', 'bonestheme' ), /* This is the Title of the Group */
-			'singular_name' => __( 'Custom Post', 'bonestheme' ), /* This is the individual type */
-			'all_items' => __( 'All Custom Posts', 'bonestheme' ), /* the all items menu item */
-			'add_new' => __( 'Add New', 'bonestheme' ), /* The add new menu item */
-			'add_new_item' => __( 'Add New Custom Type', 'bonestheme' ), /* Add New Display Title */
-			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Post Types', 'bonestheme' ), /* Edit Display Title */
-			'new_item' => __( 'New Post Type', 'bonestheme' ), /* New Display Title */
-			'view_item' => __( 'View Post Type', 'bonestheme' ), /* View Display Title */
-			'search_items' => __( 'Search Post Type', 'bonestheme' ), /* Search Custom Type Title */ 
-			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
-			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
+			'name' => __( 'Custom Types', 'wp_bp' ), /* This is the Title of the Group */
+			'singular_name' => __( 'Custom Post', 'wp_bp' ), /* This is the individual type */
+			'all_items' => __( 'All Custom Posts', 'wp_bp' ), /* the all items menu item */
+			'add_new' => __( 'Add New', 'wp_bp' ), /* The add new menu item */
+			'add_new_item' => __( 'Add New Custom Type', 'wp_bp' ), /* Add New Display Title */
+			'edit' => __( 'Edit', 'wp_bp' ), /* Edit Dialog */
+			'edit_item' => __( 'Edit Post Types', 'wp_bp' ), /* Edit Display Title */
+			'new_item' => __( 'New Post Type', 'wp_bp' ), /* New Display Title */
+			'view_item' => __( 'View Post Type', 'wp_bp' ), /* View Display Title */
+			'search_items' => __( 'Search Post Type', 'wp_bp' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'Nothing found in the Database.', 'wp_bp' ), /* This displays if there are no entries yet */ 
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'wp_bp' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'This is the example custom post type', 'bonestheme' ), /* Custom Type Description */
+			'description' => __( 'This is the example custom post type', 'wp_bp' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -79,16 +79,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
-				'name' => __( 'Custom Categories', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Category', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Categories', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Categories', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Category', 'bonestheme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Category:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Category', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Category', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Category', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Category Name', 'bonestheme' ) /* name title for taxonomy */
+				'name' => __( 'Custom Categories', 'wp_bp' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Category', 'wp_bp' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Categories', 'wp_bp' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Categories', 'wp_bp' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Category', 'wp_bp' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Category:', 'wp_bp' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Category', 'wp_bp' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Category', 'wp_bp' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Category', 'wp_bp' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Category Name', 'wp_bp' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
@@ -102,16 +102,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => false,    /* if this is false, it acts like tags */
 			'labels' => array(
-				'name' => __( 'Custom Tags', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Tag', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Tags', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Tags', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Tag', 'bonestheme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Tag:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Tag', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Tag', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Tag', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Tag Name', 'bonestheme' ) /* name title for taxonomy */
+				'name' => __( 'Custom Tags', 'wp_bp' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Tag', 'wp_bp' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Tags', 'wp_bp' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Tags', 'wp_bp' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Tag', 'wp_bp' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Tag:', 'wp_bp' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Tag', 'wp_bp' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Tag', 'wp_bp' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Tag', 'wp_bp' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Tag Name', 'wp_bp' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true,
 			'show_ui' => true,

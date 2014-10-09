@@ -8,12 +8,12 @@
 
 							<?php if (is_category()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
+									<span><?php _e( 'Posts Categorized:', 'wp_bp' ); ?></span> <?php single_cat_title(); ?>
 								</h1>
 
 							<?php } elseif (is_tag()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
+									<span><?php _e( 'Posts Tagged:', 'wp_bp' ); ?></span> <?php single_tag_title(); ?>
 								</h1>
 
 							<?php } elseif (is_author()) {
@@ -22,22 +22,22 @@
 							?>
 								<h1 class="archive-title h2">
 
-									<span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+									<span><?php _e( 'Posts By:', 'wp_bp' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
 
 								</h1>
 							<?php } elseif (is_day()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
+									<span><?php _e( 'Daily Archives:', 'wp_bp' ); ?></span> <?php the_time('l, F j, Y'); ?>
 								</h1>
 
 							<?php } elseif (is_month()) { ?>
 									<h1 class="archive-title h2">
-										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
+										<span><?php _e( 'Monthly Archives:', 'wp_bp' ); ?></span> <?php the_time('F Y'); ?>
 									</h1>
 
 							<?php } elseif (is_year()) { ?>
 									<h1 class="archive-title h2">
-										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
+										<span><?php _e( 'Yearly Archives:', 'wp_bp' ); ?></span> <?php the_time('Y'); ?>
 									</h1>
 							<?php } ?>
 
@@ -49,14 +49,14 @@
 
 									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<p class="byline vcard"><?php
-										printf(__( 'Posted', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'bonestheme' ) . ' <span class="author">%3$s</span> <span class="amp">&</span> ' . __('filed under', 'bonestheme') .  ' %4$s.', get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'bonestheme' )), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_category_list(', '));
+										printf(__( 'Posted', 'wp_bp' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'wp_bp' ) . ' <span class="author">%3$s</span> <span class="amp">&</span> ' . __('filed under', 'wp_bp') .  ' %4$s.', get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'wp_bp' )), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_category_list(', '));
 									?></p>
 
 								</header>
 
 								<section class="entry-content cf">
 
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+									<?php the_post_thumbnail( 'wpbp-thumb-300' ); ?>
 
 									<?php the_excerpt(); ?>
 
@@ -70,19 +70,19 @@
 
 							<?php endwhile; ?>
 
-									<?php bones_page_navi(); ?>
+									<?php wpbp_page_navi(); ?>
 
 							<?php else : ?>
 
 									<article id="post-not-found" class="hentry cf">
 										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+											<h1><?php _e( 'Oops, Post Not Found!', 'wp_bp' ); ?></h1>
 										</header>
 										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'wp_bp' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the archive.php template.', 'wp_bp' ); ?></p>
 										</footer>
 									</article>
 
